@@ -1,0 +1,25 @@
+Devrais-je mettre le système de validation dans le champ ou à l'extérieur ?
+En HTML c'est mis à l'intérieur
+
+La validation est faite par le champ dans lequel on met la donnée. Le champ est
+de type <x>. Il est capable de décider de lui-même de la validité de son
+contenu.
+
+Et les erreurs ? Il faut une aide pour les erreurs, et les textes peuvent
+dépendre de certaines conditions. D'autant plus qu'ils peuvent être traduits,
+et qu'il vaut mieux les sortir de toute manière pour gérer le positionnement
+HTML et le CSS plus simplement.
+
+Donc à quoi cela ressemblerait-il ?
+Un composant qui écoute un autre et qui attend un événement 'validation', dont
+le résultat pourrait être { result: true } ou { result: false, errors: [...] }.
+
+Cela semble-t-il correct ?
+
+Et sinon pour la value ?
+
+Actuellement mon pattern général est d'utiliser value et d'attendre la
+récéption du parent. Cela fait qu'il n'y a pas de validation si le parent n'est
+pas en v-model dessus. Donc je dois utiliser une valeur intermédiaire partout.
+
+Je peux changer le pattern général pour utiliser this.localValue.

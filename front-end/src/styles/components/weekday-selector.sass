@@ -1,0 +1,23 @@
+.weekday-selector
+  &-button
+    border: 1px solid $silver-chalice
+    background-color: inherit
+    &:hover
+      background-color: lighten($silver-chalice, 20%)
+  &-button, &-date
+    @extend input
+  &-icon
+    @extend .fa
+    @extend .fa-fw
+  &-previous-icon, &-next-icon
+    @extend .weekday-selector-icon
+  &-previous-icon
+    @extend .fa-chevron-left
+  &-next-icon
+    @extend .fa-chevron-right
+  &-date
+    width: 180px
+    border-style: solid
+    border-width: 1px 0
+    border-color: $silver-chalice
+    text-align: center

@@ -1,0 +1,12 @@
+.area-picker
+  display: inline-block
+  border: 1px solid $silver-chalice
+  &-input[type=radio]
+    display: none
+  &-label
+    @extend input
+    margin-bottom: 0
+  &-input[type=radio]:checked + &-label
+    background-color: lighten($silver-chalice, 20%)
+  &-label + &-input[type=radio] + &-label
+    border-left: 1px solid $silver-chalice
